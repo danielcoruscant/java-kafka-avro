@@ -2,6 +2,8 @@ package com.example.evolution;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
@@ -16,6 +18,8 @@ import com.example.CustomerV2;
 public class SchemaEvolutionExample {
 
     public static void main(String[] args) throws IOException {
+
+        Files.createDirectories(Path.of("generated-resources"));
 
         // let's test a backward compatible read
 
